@@ -1,5 +1,12 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
+    "name": "Hotelapp",
+    "sdkVersion": "25.0.0",
+    "description" : "Example Expo project showing hotels list with native-elements and react-navigation. This is the code https://github.com/gusplayer/hotelapp-react-native",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "slug": "hotelapp",
+    "primaryColor": "#cccccc",
+    "icon": "./src/icon.png"
   }
 }

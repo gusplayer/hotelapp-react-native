@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Tabs, FeedNavigator } from './navigation/Router';
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
-    return <Tabs />;
+    return  <FeedNavigator />
   }
 }
-
-export default App;

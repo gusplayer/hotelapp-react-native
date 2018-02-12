@@ -1,17 +1,42 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import { Card, ListItem, Button, FlatList, Header, Divider, Icon } from 'react-native-elements';
-import { StackNavigator } from 'react-navigation';
+import { StyleSheet, Text, View, Image, ScrollView, ImageBackground } from 'react-native';
+import { Card, ListItem, Button, FlatList, Header, Divider, Icon, SocialIcon } from 'react-native-elements';
 
 export default class App extends React.Component {
 
   render(){
     const { navigate } = this.props.navigation;
-    return (      
-      <View style={styles.container}>
-        <Text>Es es el home</Text>
-        <Button title="Go to Jane's profile" onPress={() => navigate('HotelDetail') }/>
-      </View>      
+    return (    
+      
+        <View style={styles.container}>
+            <ImageBackground
+              source= {{ uri: 'https://images.pexels.com/photos/417344/pexels-photo-417344.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb' }}
+              style={styles.image}>
+              <View style={styles.header}>
+                <Text style={{fontSize: 29, fontWeight:'500'}}> HotelApp</Text>
+              </View>
+              <View style={styles.social}>
+                <SocialIcon
+                  style={styles.socialIcon}
+                  title='Sign In With Facebook'
+                  button
+                  type='facebook'
+                  onPress={() => navigate('ListHotels') }
+                />
+                <SocialIcon
+                  style={styles.socialIcon}
+                  title='Sign in Twitter Message'
+                  button
+                  type='twitter'
+                  onPress={() => navigate('ListHotels') }
+                />
+              </View>
+              <View style={styles.footer}>
+                <Text style={{color: 'white'}}>Aceptas los terminos y condiciones</Text>
+              </View>
+            </ImageBackground>
+        </View>
+          
     )
   }
 }
@@ -19,70 +44,32 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#cccccc',
+    backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'column',
   },
   header:{
-    width: '100%',
-    height: 70,
-    backgroundColor: '#ffffff',
-    justifyContent: 'space-between'
+    flex: 8,
+    alignContent: 'center',
+    justifyContent: 'center'
   },
-  headerComponent:{
-    flexDirection: 'row',
+  social:{
+    flex: 3
+  },
+  footer:{
     flex: 1,
-    height: 50,
-    width: 300,
-    backgroundColor: '#ffffff',
-    justifyContent: 'space-around'
   },
-  scroll:{
-    width: '100%'
-  },
-  hotelList:{
-    flex: 1,
-    width: '100%',
-    backgroundColor: '#cccccc',
-  },
-  subHeader:{
-    flex: 1,
-    backgroundColor: '#cccccc',
-  },
-  user:{
-    width: '100%',
-    backgroundColor: 'white',
+  socialIcon:{
+    padding: 30,    
   },
   image:{
-    width: '100%',
-    height: 180
+    flex: 1,
+		width:'100%',
+    height: '100%',
+    padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  name:{
-    marginTop: 10,
-    marginBottom: 5,
-    fontWeight:'500',
-    fontSize: 18,
-    color: '#37474f'
-  },
-  price:{
-    marginTop: 15,
-    marginBottom: 5,
-    fontWeight:'300',
-    fontSize: 13,
-    color: '#37474f'
-  },
-  rate:{
-    flexDirection: 'row'
-  },
-  Box:{    
-  shadowColor: 'black',
-  shadowOpacity: .2,
-  shadowOffset:
-          {
-            height:1,
-            width:-1,
-          },
-          elevation: 2,
-      },
+
 });

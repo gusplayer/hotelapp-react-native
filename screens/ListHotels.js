@@ -163,14 +163,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 5,
     fontWeight:'500',
-    fontSize: 18,
+    fontSize: 16,
     color: '#37474f'
   },
   price:{
-    marginTop: 15,
+    marginTop: 14,
     marginBottom: 5,
     fontWeight:'300',
-    fontSize: 13,
+    fontSize: 12,
     color: '#37474f'
   },
   rate:{

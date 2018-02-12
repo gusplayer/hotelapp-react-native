@@ -9,24 +9,27 @@ export const FeedNavigator = StackNavigator({
     ListHotels: {
         screen: ListHotels,
         navigationOptions: {
-          title: 'ListHotels',
+        title: 'ListHotels',
+        header: null,
         },  
       },
     Home: {
       screen: Home,
       navigationOptions: {
         title: 'Home',
+        header: null,
       },  
     },   
     HotelDetail: {
       screen: HotelDetail,
-      navigationOptions: {
-        title: 'HotelDetail',
+      navigationOptions: {        
+        title: 'Detalles del Hotel',
       }, 
     },    
   },
   {
-    initialRouteName: 'ListHotels',
+    initialRouteName: 'Home',
+    
   }
 
 );
@@ -46,13 +49,14 @@ export const Tabs = TabNavigator({
         tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
       },  
     },
-    // HotelDetail: {
-    //     screen: HotelDetail,
-    //     navigationOptions: {
-    //       tabBarLabel: 'Hoteles',
-    //       tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
-    //     },  
-    //   },
+    HotelDetail: {
+        screen: HotelDetail,
+        navigationOptions: {
+          header: null,
+          tabBarLabel: 'Details',
+          tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+        },  
+      },
   },
   {
     initialRouteName: 'Home',
